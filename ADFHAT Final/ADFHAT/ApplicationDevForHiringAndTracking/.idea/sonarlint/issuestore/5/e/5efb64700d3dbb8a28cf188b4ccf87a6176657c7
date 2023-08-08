@@ -1,0 +1,65 @@
+
+c	java:S112‰"FDefine and throw a dedicated exception instead of using a generic one.(—•Çó8¸§¢Åî0
+i	java:S116 "ORename this field "TYPE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÖÝ§†ÿÿÿÿÿ
+s	java:S116!"RRename this field "HEADERs" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁÑéàüÿÿÿÿ8Ž®¢Åî0
+<
+java:S1170 "!Make this final field static too.(ÖÝ§†ÿÿÿÿÿ
+Q	java:S125,"<This block of commented-out lines of code should be removed.(ó€ÿù
+W
+java:S11260"AReplace this if-then-else statement by a single return statement.(Úý÷°
+u
+java:S37765"SRefactor this method to reduce its Cognitive Complexity from 166 to the 15 allowed.(Òö©üÿÿÿÿ8¶®¢Åî0
+a
+java:S2147c"DCombine this catch with the one at line 97, which has the same body.(‚ùïÄ8à®¢Åî0
+E	java:S108a")Either remove or fill this block of code.(ßÈ´8à®¢Åî0
+E	java:S108c")Either remove or fill this block of code.(‚ùïÄ8à®¢Åî0
+b
+java:S2147m"ECombine this catch with the one at line 106, which has the same body.(ì÷“þ8à®¢Åî0
+E	java:S108j")Either remove or fill this block of code.(ßÈ´8à®¢Åî0
+E	java:S108m")Either remove or fill this block of code.(ì÷“þ8à®¢Åî0
+b
+java:S2147w"ECombine this catch with the one at line 117, which has the same body.(‚ùïÄ8à®¢Åî0
+D	java:S108u")Either remove or fill this block of code.(ÂÓ¤v8à®¢Åî0
+E	java:S108w")Either remove or fill this block of code.(‚ùïÄ8à®¢Åî0
+c
+java:S2147Š"ECombine this catch with the one at line 135, which has the same body.(ì÷“þ8à®¢Åî0
+E	java:S108‡")Either remove or fill this block of code.(ÂÓ¤v8ò®¢Åî0
+F	java:S108Š")Either remove or fill this block of code.(ì÷“þ8ò®¢Åî0
+c
+java:S2147”"ECombine this catch with the one at line 146, which has the same body.(ì÷“þ8ò®¢Åî0
+E	java:S108’")Either remove or fill this block of code.(ÂÓ¤v8ò®¢Åî0
+F	java:S108”")Either remove or fill this block of code.(ì÷“þ8ò®¢Åî0
+c
+java:S2147œ"ECombine this catch with the one at line 155, which has the same body.(‚ùïÄ8ò®¢Åî0
+E	java:S108›")Either remove or fill this block of code.(ÂÓ¤v8ò®¢Åî0
+F	java:S108œ")Either remove or fill this block of code.(‚ùïÄ8ò®¢Åî0
+b
+java:S2147©"ECombine this catch with the one at line 166, which has the same body.(ÂÓ¤v8ú®¢Åî0
+c
+java:S2147«"ECombine this catch with the one at line 166, which has the same body.(‚ùïÄ8ú®¢Åî0
+K	java:S108¦")Either remove or fill this block of code.(ÊÎ—ÿÿÿÿÿÿ8ú®¢Åî0
+E	java:S108©")Either remove or fill this block of code.(ÂÓ¤v8ú®¢Åî0
+F	java:S108«")Either remove or fill this block of code.(‚ùïÄ8ú®¢Åî0
+c
+java:S2147¿"ECombine this catch with the one at line 189, which has the same body.(ßÈ´8ú®¢Åî0
+c
+java:S2147Á"ECombine this catch with the one at line 189, which has the same body.(‚ùïÄ8Š¯¢Åî0
+K	java:S108½")Either remove or fill this block of code.(ÊÎ—ÿÿÿÿÿÿ8š¯¢Åî0
+F	java:S108¿")Either remove or fill this block of code.(ßÈ´8š¯¢Åî0
+F	java:S108Á")Either remove or fill this block of code.(‚ùïÄ8š¯¢Åî0
+c
+java:S2147Ð"ECombine this catch with the one at line 205, which has the same body.(ì÷“þ8š¯¢Åî0
+E	java:S108Í")Either remove or fill this block of code.(ÂÓ¤v8Ÿ¯¢Åî0
+F	java:S108Ð")Either remove or fill this block of code.(ì÷“þ8¢¯¢Åî0
+c
+java:S2147Ü"ECombine this catch with the one at line 217, which has the same body.(ì÷“þ8£¯¢Åî0
+E	java:S108Ù")Either remove or fill this block of code.(ÂÓ¤v8¥¯¢Åî0
+F	java:S108Ü")Either remove or fill this block of code.(ì÷“þ8¦¯¢Åî0
+[	java:S106â"9Replace this use of System.out or System.err by a logger.(ÔËÿ„üÿÿÿÿ8§¯¢Åî0
+[	java:S106ç"9Replace this use of System.out or System.err by a logger.(Þõ®üÿÿÿÿÿ8ª¯¢Åî0
+[	java:S106ì"9Replace this use of System.out or System.err by a logger.(ñÌÃÒøÿÿÿÿ8¬¯¢Åî0
+[	java:S106ñ"9Replace this use of System.out or System.err by a logger.(ÂŸ¯ùÿÿÿÿ8­¯¢Åî0
+[	java:S106ù"9Replace this use of System.out or System.err by a logger.(‘”ˆÍÿÿÿÿÿ8­¯¢Åî0
+[	java:S106Ž"9Replace this use of System.out or System.err by a logger.(©þêÜúÿÿÿÿ8¶¯¢Åî0
+M
+java:S1068!"+Remove this unused "HEADERs" private field.(ÁÑéàüÿÿÿÿ8Á¯¢Åî0

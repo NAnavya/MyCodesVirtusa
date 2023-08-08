@@ -1,0 +1,5 @@
+SL.NO.,First_Name,Last_Name,College_Email,Personal_Email,Aadhaar_No,Gender,Branch,Date_Of_Birth,Mobile_No,Offered_Date,Onboarding_Year,Hired_Through,College_Name,Degeree,Recruiter_Name,Job_Details;
+1,Samiran,Dey,tig.2023@gmail.com,samiran@gmail.com,182392039812,Male,ECE,23/04/2000,9834823102,21/09/2023,2022,Codelite,TIG,B.Tech,Soumik;Sarkar,Java-FSD
+2,Samrat,Ganguly,tiu.2020@gmail.com,samratganguly@gmail.com,293840123845,Male,ECE,28/03/2002,8987120374,20/10/2023,2022,OnCampus,TIU,M.Tech,Sumona;Sarkar,.Net-FSD
+3,Aliviya,Saha,tiu.2022@gmail.com,sahaaliviya@gamil.com,283209123942,FeMale,CSE,28/03/2001,8987120374,20/10/2023,Sarthak,OffCampus,BIT,T.Tech,Arup;
+4,Zinnia,Saha,tiu.2022@gmail.com,zinnia@gmail.com,283209123944,FeMale,ECE,28/03/2003,8987120374,20/10/2023,2022,OnCampus,UIT,T.Tech,Barun;
