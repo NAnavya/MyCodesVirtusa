@@ -1,0 +1,171 @@
+1) What is spring boot ? Why use spring boot 
+
+: Spring boot is a spring module which is used for RAD development with extra support of autoconfiguration 
+: It helps in developing fast and standalone application takes dependices from pom and append it in project 
+: embedded server tomcat and jetty 
+
+2)  What is RAD ? 
+
+: Modified waterfall model , It takes shorter period of time . 
+: Phases 
+1) Business modeling 
+2) Data modeling       data objects are created and relation ship between them is established 
+3) Process modeling       - adding deleting and retreving the data from data object 
+4) Application Generation  -- Convert process and data model into actual product which is a prototype which is when asked to the client if it is okay ,
+ if it is rejected then again the whole process starts  
+5) Testing and turnover  : Changes are required then turnover the whole process . 
+
+
+in spring  , in 4th phase you loose a lot of time because of the boiler plate code whichis not present in the boot . 
+
+
+
+3)  Is it possible to change the port of embedded tomcat server in spring boot 
+
+: By default it runs onm 8080 
+
+: in Applicationproperties file just server.port = portnumber (80anytwodigitnumber) 
+
+
+4) Can weoverride or replace the embedded tomcat server ? 
+
+: Tomcat server is inside the dependency in spring-starter-web  responsible for config tomcat in 8080 port 
+: <exclusions>
+
+  <exclusion>
+     <groupId>org.springframework.boot</groupid>
+     <artifactId> spring-boot-starter-tomcat<artifactid>
+<exclusion>
+</exclusions>
+<-----use jetty instead---->
+<dependency>
+<groupId>org.springframework.boot</groupid>
+     <artifactId> spring-boot-starter-jetty<artifactid>
+</dependency>
+
+
+5) Can we disable the default web server in the spring boot application ? 
+
+: in pom.xml spring-boot-starter-web which is responsible for setting up the server in port 8080 
+: we can deisable it adn use it of our own
+in application porperties 
+we have to use our spring.main.web-application-type=none ; 
+
+
+
+6)  How to disable specific autoconfiguration class ? 
+
+You can use the  @EnableAutoconfiguration to disable 
+in the main method in spring boot 
+
+the method has @SpringBootApplication
+it already has @EanbleAutoConfiguration which by default configs the classes 
+so we have to override it @EnableAutoConfiguration(exclude={Datasourceconfig.class) 
+
+7)  What does the @SpringBootApplication do internally 
+
+: first of all it is a combination of 3 annotations @Configuration(which helps to identify the beans)  @EnableAutoConfiguration(helps in autoscan)
+ @ComponentScan(The component where the beans are available) spring boot enables us to use a single annotation instead of three but it is loosely couopled so we can 
+use any of the three annotations when we need . 
+
+
+8)  How to use the value of properties in applicaiton.properties.class in java class ? 
+
+: @Value("${server.port}")
+   private String serverport ; 
+@Value annotation to access the property value of the application property file . 
+
+
+
+
+
+9)  Explain @RestController in springboot 
+
+: Specialization of the @component it creates the bean only it is a combintion of two annotations @ResponseBody @Controller which converts the response to 
+JSON or XML 
+it is usely used with the combination with the @RequestMapping 
+data returned by each method will straight go into the response body instead of the template . 
+
+
+10)  Difference between @RestController @COntroller 
+: 
+difference between web app and RESTAPI 
+whenever we have @Controller the response is used as a human readable form so it is mapped to the html template which is readable by the user 
+in rest APi the reponse is sent to the rest client which is read by the rest cient which should be in JSON or XML and that is the difference between the @Controlelr 
+@RestControlelr . 
+
+ 
+
+11) Diffference between GetMapping and RequestMapping 
+
+: It is basically the same thing but it is used for redability and understanding @RequestMapping can take any type of request like post get put delete
+
+
+12) What is the use of profiles in spring boot ?
+
+: We have different environment in the industry while development we have development environment and prod environment where client uses the product and we have
+testing environment .
+: The config porperties are different for different environments . 
+: Suppose we have h2 data base in dev env but in prod env theyu have oracle db 
+we have to make two different application-properties 
+applicaton-dev.properties . 
+application-prod.properties . 
+then one more main application properties we have to make which will contain which is what profile . 
+spring.profiles.active = prod or dev .
+
+
+13) WHAT IS ACTUATOR ?
+It is used for controlling something or for moving in actual terms , in spring boot a additional feature which helps to monitor the app when it is pushed to 
+the production . Auditing , health and metrics 
+we can enable this by adding the dependency spring boot-starter-actuator in pom.xml 
+Using spring actuator you can access those flows like what bean is creatd what is cpu usage how many hits on the that server hasa handleed . 
+
+
+14) ACTUATOR ENDPOINTS >
+
+: http://localhost:8080/actuator/beans      all the beans will be exposed  
+   http://localhost:8080/actuator/env        it gives active profiles and the server number onwhich it is running . 
+   http://localhost:8080/actuator/health
+
+
+15) Enabling HTTP Trace ? 
+  before spring boot 2.2.x exposing the actutaor endpoint it will also expose the http trace after 2.2.x it is not true
+to fix the issue just create the bean of HttpTraceRepsoitory which is memory repository. this will store last 100 http request-response calls in memory 
+
+
+16) in properties file 
+management.endpoints.web.exposure.include=*   ( which will expose every endpoint of the actuator ) 
+management.endpoints.web.base-path = /manage   ( this will change the web path for the actutaor )  
+
+
+17 ) CAn we customize the management server port of the actuator ? 
+in porperties file we have to add 
+management.server.port = 8090 
+now all the endpoints will be working on the 8090 of the actuator  
+
+
+18) How to create Custom endpoints
+by using the annotations @Endpoint @Component to class 
+suppose we have empoyee model which has a view and we have to view all employee view as a json format we can do that for custom endpoint . 
+
+
+19 ) STEPS TO DEPLOY THE SPRING BOOT APPLICATIONS AS A WAR OR JAR FILE .
+to deply the application we have to add the following plugin 
+<plugin>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-maven-plugin<artifactid>
+</plugin>
+this will give you a jar file contatining all the necessary libraries and also the embedded server so we can just run it like a normal jar file . 
+we have to use <packaging>jar</pacakagin>
+we need a build plugin also 
+
+
+20) YAML FILE as applicationproperties  ? 
+application.yml 
+it has a key value pair 
+it is more clear and redeable 
+support for list 
+
+21 ) when you have both applicationproperties and yml which is given more prefrences ? 
+it will give application.properties the prefrence . 
+

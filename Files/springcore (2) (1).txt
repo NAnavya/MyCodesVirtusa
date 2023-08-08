@@ -1,0 +1,280 @@
+SPRING CORE 
+
+
+* Spring is a java framework which was developed to make 
+j2ee application development eaiser 
+
+DRAWBACKS FOR J2EE 
+
+* there were lot of drawbacks  in j2ee applications 
+one of the major drawback was 
+Tight Coupling whatever application you tried to develop 
+it has to extend something or some classes 
+like in web application it has to extend servelt classes 
+
+Another drawback was no support for new technologies 
+
+It used to be very heavy weight 
+
+Bolierplate code was more . 
+
+cross cutting concerns - it did not support security , transaction in built . 
+
+to overcome all these drawbacks spring was developed .
+
+There are certain principles which is to be followed whenever we are developing any applications those are SOLID principles in which S stands for 
+SRP ( single responsibility principel) which states that every class has to have one responsibility example either handle user data or handle customer data 
+not both . 
+
+
+SPRING CORE 
+
+* One of the major feature of spring core is Depencdency injection 
+
+Whenever one object is required by anotehr object to do some functionalities , we have to use dependency injection . 
+
+* object which is source is called dependant and object which is injected is called dependancy .
+
+* We can inject the objects with the plain old java code also but either encapuslation will be broken or it will be tightly coupled . 
+so in this case , when we use spring the developer is expecting spring will create the object and supply to it . And he will be able to use that object 
+this is called dependency injection . 
+
+* to implement spring core in project we have to follow  3steps 
+1) Configuration 
+2) Dependency injector 
+3) Use the beans or get the beans . 
+
+CONFIGURATION  : 
+Configuration of spring core can be done in 3 ways these are xml based configuration , java configuratoion or Annotations . 
+
+Now How to create object in spring and how to inject them as dependency in project 
+
+Create a  XML file called  
+spring-config.xml
+
+* there should be some texts which refers to link of xml which are used to validate the xml file by JVM while creating beans or objects 
+
+<beans>
+   <bean id="pen" class="com.pacage.className">
+
+   </bean>
+
+    <bean id="blackink" class="com.package.className">
+           <constructor-arg ref="pen">
+    </bean>
+</beans>
+
+* After this configurations are done , this config file is passed to dependecny injector which validates the xml and then creates objects 
+
+BeanFactory bf = new XMLBeanFactory( new ClassPathResource("spring-config.xml"))  
+
+* this Dependecny injector then creates a spring container which is often called spring IOC container which has all the object refrence . 
+
+***Important  : 
+
+Spring IOC Container does not hold the objects itself but it only holds the references . The actual objects are stored in 
+a Logical memory created in the JVM . If we want the object to be created in the container itself we have to create them manually.
+
+
+Pen pen = bf.getBean("pen") ;
+
+* If the object reference is not in the container then it does not show compile time error but instead it shows runtime error so it is difficult to figure out if 
+wrong bean name is provided . 
+
+DEPENDENCY MANAGEMENT 
+
+* Dependecny Lookup  : If the developer writes the code manually to get the object from the container it is called dependency lookup . 
+* Dependency Injection  : It is the process of automatically getting and creation of the objects by the spring  . 
+
+Spring Container is kind of hashmap  : where in bean tag of xml id is key and class attribute is value .
+
+
+Drawbacks of using XML configurations 
+
+1) We have to learn XML to work with it 
+2) Type Safety is not there 
+3) XML cannot detect errors at compile time if you give wrong name of the bean 
+
+
+Java Configuration 
+
+1) @Configuration(<Beans>) 
+    public class JavaConfig{
+        
+         @Bean this is(<bean> tag) 
+         public BlackInk(this is className) blackInk(FountainPen fpen (<--this is the target object )  )(this is id name ) {
+                 return blackInk();
+        
+            }
+
+
+}  
+
+ @Configurtation will be replacememnt for the <beans> tag 
+@Bean will be replacement for the <bean id=''> tag 
+
+
+
+ApplicationContext ap = new ClassPathXMLApplicationContext("xml file") ; 
+ApplicationContext ap= new AnnotationConfigApplicationContext(Javaconfig.class) ;
+
+Writer writer = new (Writer)context.getBean("writer") ;
+
+BeanFactory is a interface and applicationCOntext extends BeanFActory then we have XMLBeanFAcroty which implements BeanFactory 
+
+
+
+**** In our big project we will have 100 beans so we cannot write 100 beans in code which is very time consuming we can avoid 
+writing of beans which is boilerplate code by using @Component @Autowired 
+
+Annotations based configuration 
+
+@Component
+public class Pen{
+}
+@Component class Writer{
+}
+
+ **  here all the @component annotations represent that the following class is a bean 
+ **  how the spring knows that all the classes are beans with the help of @ComponentScan(basepackage="com.st") annotations
+
+ **   @Autowired is used to inject the target object into the source object 
+      @Autowired can be used to inject object via constructor and via setter and also with field injection 
+
+
+
+**   @Component is a java bean which is used to declare a bean at the class level . 
+     @Component("CreditCArd") we can provide our custom name to the bean . If we do not provide any bean name it will take the default className as the bean name 
+
+
+
+@Component 
+public class A {
+  
+    B b ; 
+
+    @Autowired       <-------- this is how we inject the target bean into the source object directly with annotation (Constructor injection) 
+    public A(B b) 
+     {
+        this.b = b ;
+      }
+
+
+      @Autowired    <---------- setter injection using autowired
+     public setA(B b) {
+        
+           this.b = b ;
+
+      }
+
+
+    @Autowired     <------------------Field Injection 
+     private B b ;  
+
+}
+
+
+
+XML FILE
+<beans>
+        <component-scan basepackage ="com.st">
+</beans>
+
+
+
+
+*******************************************************************************
+SPRING CORE ANNOTATIONS 
+
+1. @Configuration 
+2. @Bean
+3. @Component
+4. @Componentscan
+5. @Autowired
+6. @ImportResource
+7. @Import 
+8. @Primary 
+9. @Qualifier 
+
+
+
+DEPENDENCY INJECTION 
+
+   DI ---------- XML Config -- SI , CI | Manual config 
+                 Java Config -- SI ,CI | Developer will write the configuration manually 
+                
+   Autowiring   === Automatic configuration with the help of @Component , @Autowired annotation
+                     @Component is used to make pojo class as spring bean 
+                     @Autowired is used to create a dependecny injection 
+
+    @Autowired --CI , SI , Feild Injection } XML config , Java config 
+
+
+
+ Who is going to process @Component , @Autowired 
+ -> Spring has provided some source code to behave their functionality 
+    detecting the presence of @Component annotation and creating the object is done  
+     by @Componentscan 
+     which is disabled by default we need to explicitly enable it 
+
+***** The reason why it is disabled 
+   
+   -> In Project there will be 100 jars in project 
+@Component will be any where in the classaPath . 
+If @Componentscan is enabled the spring has to search every class in the classpath . 
+it will too much time to scan every class 
+
+explicitly we will provide the basepackage then it will look into that packages only . By default it will scan the current package only  
+
+
+@Autowired field level injection is not recomended because dependency is not known we cannot write unit testing code . 
+
+
+
+** @Lazy it is used to request bean formation only when it is needed rather than creating beans at the startup . 
+** @Qualifier it is used to give alias name to the beans  , used to injec the bean as byName=""
+
+****************************************************************************************************************************************
+
+BEAN SCOPE 
+
+
+** scope -> lifetime 
+** bean scope  -> "lifetime of bean in the container " 
+
+ ** when a bean is created in a container and when it gets destroyed , it is called bean scope . 
+
+how many types of bean scope are there in spring . 
+
+1) Singleton 
+2) Prototype 
+3) Session 
+4) Global 
+5) Request 
+6) Application 
+
+
+
+
+
+
+
+import java.util.* ; 
+import com.entity.customer ; 
+import com.service.customerservice ; 
+
+@RestController
+@RequestMapping 
+public class ExampleController{
+
+@Autowired 
+CustomerService cs ; 
+
+@GetMapping("/getusers")
+public ArrayList<Customers> getAllUsers (){
+return cs.getCustomers() ;
+
+}
+ 
+
+

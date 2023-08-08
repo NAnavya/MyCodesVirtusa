@@ -1,0 +1,43 @@
+Depedencies
+-------------
+
+->hibernate core/entity manage
+
+methods
+--------
+
+-> (int) save or (void) persisist (insert).
+-> delete - delete
+->update - update
+-> saveorupdate , merge - to insert or update.
+-> select - load(for lazy loading) , get(for eager loading)
+
+states 
+------
+1) Transient
+2) persistenace(after a row is created for tht object in db then it is said to persistanc state)
+
+	-> Also called first level cache
+	->session cache
+3) detached (after closing session)
+
+cache
+---------
+
+1) evict(object) to clear cache (clears only one object)
+2)
+
+inheritence
+-----------
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+
+1)Single table(one table in created)
+2)joined(creates one table for esch class)
+3)Table per class
+
+Association mapping
+---------------------
+1) one to one
+2) one to many
+3)many to one
+4) many to many
