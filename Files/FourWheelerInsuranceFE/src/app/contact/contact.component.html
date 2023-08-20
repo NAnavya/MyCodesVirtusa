@@ -1,0 +1,172 @@
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 mb-4 mb-lg-0">
+        <h2 class="h5 lined text-white mb-4">About</h2>
+        <p class="text-muted text-small">
+          Join us to clain your insurace for all your four wheelers
+        </p>
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item">
+            <a class="social-link" href="#"
+              >Akshitha</a>
+          </li>
+          <li class="list-inline-item">
+            <a class="social-link" href="#">Navya</a>
+          </li>
+          <li class="list-inline-item">
+            <a class="social-link" href="#"
+              >Nikhitha</a>
+          </li>
+          <li class="list-inline-item">
+            <a class="social-link" href="#">Vishvapriya</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-5 mb-4 mb-lg-0">
+        <h2 class="h5 text-white lined mb-4">How it works</h2>
+        <div class="d-flex">
+          <ul class="list-unstyled d-inline-block mr-4 mb-0">
+            <li class="mb-2"><a class="footer-link" href="#">Careers </a></li>
+            <li class="mb-2">
+              <a class="footer-link" href="#">Terms of Service</a>
+            </li>
+          </ul>
+          <ul class="list-unstyled d-inline-block mb-0">
+            <li class="mb-2"><a class="footer-link" href="#">Home </a></li>
+            <li class="mb-2"><a class="footer-link" href="#">About us</a></li>
+            <li class="mb-2"><a class="footer-link" href="#">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <h2 class="h5 text-white lined mb-4">Four Wheeler Insurance</h2>
+        <p class="text-muted text-small">
+          Send your querries and feedback to us
+        </p>
+        <h4 class="text-danger text-center" *ngIf="successMessage">
+          {{ successMessage }}
+        </h4>
+        <p class="text-danger text-center" *ngIf="successMessage">
+          Thank you For Your FeedBack
+        </p>
+        <h4 class="text-danger text-center" *ngIf="errorMessage">
+          {{ errorMessage }}
+        </h4>
+        <div class="feedbackform input-group mb-3">
+          <form
+            [formGroup]="feedBackForm"
+            novalidate
+            (ngSubmit)="sentFeedBack()"
+          >
+            <label for="Name">Name:</label>
+            <input
+              class="form-control text-muted bg-none border-primary"
+              type="text"
+              formControlName="Name"
+              name="Name"
+              id="Name"
+              aria-label="Recipient's username"
+              aria-describedby="button-addon2"
+              placeholder="Enter Your Name"
+              required
+            /><small
+              class="text-danger"
+              *ngIf="
+                feedBackForm.get('Name').invalid &&
+                feedBackForm.get('Name').touched
+              "
+              >*Name is Required</small
+            >
+            <label for="emailId">EmailId:</label>
+            <input
+              type="email"
+              formControlName="emailId"
+              name="emailId"
+              id="emailId"
+              class="form-control text-muted bg-none border-primary"
+              aria-label="Recipient's username"
+              aria-describedby="button-addon2"
+              placeholder="someone@gmail.com"
+              required
+            />
+            <div
+              *ngIf="
+                feedBackForm.get('emailId').invalid &&
+                feedBackForm.get('emailId').touched
+              "
+            >
+              <small
+                class="text-danger"
+                *ngIf="feedBackForm.get('emailId').errors.required"
+                >*EmailId is Required</small
+              >
+              <small
+                class="text-danger"
+                *ngIf="feedBackForm.get('emailId').errors.pattern"
+                >*Invalid EmailId</small
+              >
+            </div>
+            <label for="PhoneNumber">PhoneNumber:</label>
+            <input
+              type="tel"
+              formControlName="PhoneNumber"
+              name="PhoneNumber"
+              id="PhoneNumber"
+              class="form-control text-muted bg-none border-primary"
+              aria-label="Recipient's username"
+              aria-describedby="button-addon2"
+              placeholder="mobilenumber"
+              required
+            />
+            <div
+              *ngIf="
+                feedBackForm.get('PhoneNumber').invalid &&
+                feedBackForm.get('PhoneNumber').touched
+              "
+            >
+              <small
+                class="text-danger"
+                *ngIf="feedBackForm.get('PhoneNumber').errors.required"
+                >*PhoneNumber is Required</small
+              >
+              <small
+                class="text-danger"
+                *ngIf="feedBackForm.get('PhoneNumber').errors.pattern"
+                >*Invalid PhoneNumber</small
+              >
+            </div>
+            <label for="feedback">type your feedbacks</label>
+            <textarea
+              class="form-control text-muted bg-none border-primary"
+              formControlName="feedback"
+              id="feedback"
+              name="feedback"
+              rows="3"
+              aria-label="Recipient's username"
+              aria-describedby="button-addon2"
+            ></textarea>
+            <small
+              class="text-danger"
+              *ngIf="
+                feedBackForm.get('Name').invalid &&
+                feedBackForm.get('Name').touched
+              "
+              >*FeedBack is Required</small
+            >
+            <div class="input-group-append">
+              <button
+                [disabled]="feedBackForm.invalid && feedBackForm.touched"
+                class="btn btn-primary"
+                id="button-addon2"
+                type="submit"
+              >
+                <i class="fas fa-paper-plane"></i>Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

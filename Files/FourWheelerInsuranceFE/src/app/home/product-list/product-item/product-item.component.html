@@ -1,0 +1,13 @@
+
+<div class="card product-item md-4 shadow p-3 mb-5 bg-white rounded" *ngIf="product">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">   
+    <div class="card-body p-4">
+        <small class="text-capitalize text-info font-weight-bolder">Policy Name:</small><h4>{{product.policyName}}</h4>
+        <small class="text-capitalize text-info font-weight-bolder">Policy Price</small><h5>Rs.{{product.policyPrice}}/-</h5>
+    </div>
+            
+    <button class="btn btn-outline-primary btn-lg rounded-pill" (click)="addToCart()">Add to Cart</button>
+</div>
+</div>
+    </div>

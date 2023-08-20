@@ -1,0 +1,19 @@
+.product-details{
+    background-color: darkkhaki;
+    border-radius: 10px;
+    padding:18px;
+}
+table{
+    background-color: whitesmoke;  
+}
+.shipping-address{
+    background-color: darkkhaki;
+    border-radius: 10px;
+    padding:18px;
+}
+.shipping-address td{
+    font-size:large;
+}
+h1{
+    color:black;
+}

@@ -1,0 +1,24 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.main input[type=text] {
+    padding: 6px;
+    border: 1px;
+    margin-top: 8px;
+    margin-right: 16px;
+    margin-bottom: 4px;
+    font-size: 15px;
+  }
+
+  .products{
+    margin-top: 20px;
+  }
+
+  .products h1{
+    text-align: center;
+    padding: 60px;
+    background-color: gray;
+    color: whitesmoke;
+    font-size: 30px;
+  }

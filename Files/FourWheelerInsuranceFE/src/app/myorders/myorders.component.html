@@ -1,0 +1,34 @@
+<app-header></app-header>
+<section class="hero-home bg-cover bg-center vh-100" style="background-image: url('assets/images/Car Insurance.jpg'); background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;" >
+<div class="container index-forward bg-transparent" *ngIf="isPresent ;else noOrdersPlaced">
+    <h1 class="text-center" class="text-center text-uppercase text-shadow mb-0 text-light">My Policies</h1>
+    <div class="myorders">
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <th scope="col">Policy Id</th>
+                <th scope="col">policy Name</th>
+                <th scope="col">Policy Price</th>
+                <th scope="col">Number of Years plan</th>
+                <th scope="col">claim Amount</th>
+                <th scope="col">Policy details</th>
+                <th scope="col">Order PlacedDateTime</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orders">
+                        <td>{{order.orderid}}</td>
+                        <td>{{order.policyName}}</td>
+                        <td>{{order.policyPrice}}</td>
+                        <td>{{order.numberOfYearsPlan}}</td>
+                        <td>{{order.claimAmount}}</td>
+                        <td>{{order.policydetails}}</td>
+                        <td>{{order.createdDateTime}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<ng-template  #noOrdersPlaced>
+    <h1 style="text-align:center;color:rgba(18, 30, 166, 0.437)  ;" class="text-white">No Orders Placed Yet</h1>
+</ng-template>

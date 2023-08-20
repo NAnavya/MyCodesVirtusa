@@ -1,0 +1,12 @@
+.container{
+    background-color: cadetblue;
+    border-radius: 8px;
+    padding:18px;
+}
+.customers{
+    background-color: silver;
+}
+h4,h1{
+    color:aliceblue;
+    text-align: center;
+}

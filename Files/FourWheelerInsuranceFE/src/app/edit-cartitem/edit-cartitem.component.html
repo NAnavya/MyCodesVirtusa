@@ -1,0 +1,26 @@
+<app-header></app-header>
+<section class="hero-home bg-cover bg-center vh-100" style="background-image: url('assets/images/Car Insurance.jpg'); background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;" >
+<div class="container mt-4 index-forward bg-transparent" *ngIf="cartitem">
+    <h1 class="text-center" class="text-center text-uppercase text-shadow mb-0 text-light">View Details</h1>
+    <form (ngSubmit)="updateQuantity()"  #editcartitem="ngForm" novalidate>
+        <div class="form-group">
+            <label for="policyName" class="text-center text-uppercase text-shadow mb-0 text-light font-weight-bolder">PolicyName</label>
+            <input type="text" name="policyName" class="form-control" [ngModel]="cartitem.policyName" readonly>
+        </div>
+        <div class="form-group">
+            <label for="policyPrice" class="text-center text-uppercase text-shadow mb-0 text-light font-weight-bolder">Policy price</label>
+            <input type="text" name="policyPrice" class="form-control" [ngModel]="cartitem.policyPrice" readonly>
+        </div>
+        <div class="form-group">
+            <label for="claimAmount" class="text-center text-uppercase text-shadow mb-0 text-light font-weight-bolder">Claim Amount</label>
+            <input type="text" name="claimAmount" class="form-control" [ngModel]="cartitem.claimAmount" readonly>
+        </div>
+        <div class="form-group">
+            <label for="numberOfYearsPlan" class="text-center text-uppercase text-shadow mb-0 text-light font-weight-bolder">Number of years of plan</label>
+            <input type="text" name="numberOfYearsPlan" class="form-control" [ngModel]="cartitem.numberOfYearsPlan" readonly>
+        </div>
+        <button [disabled]="editcartitem.form.invalid || editcartitem.value.quantity < 1" type="submit" class="btn btn-warning rounded-pill">Back</button>
+    </form>
+</div>

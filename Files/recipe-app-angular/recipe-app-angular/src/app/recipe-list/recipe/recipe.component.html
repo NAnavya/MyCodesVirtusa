@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-12">
+    <p>Recipe is: {{ recipe.recipeName }}</p>
+    <p>Recipe Type: {{ recipe.recipeType }}</p>
+    <p>Recipe Cost: {{ recipe.recipeCost | currency: "INR" }}</p>
+    <button class="btn btn-outline-primary" (click)="onEditTemplate()">
+      Edit Recipe (Template Form)
+    </button>
+    <button class="btn btn-outline-primary ml-3" (click)="onEditReactive()">
+      Edit Recipe (Reactive Form)
+    </button>
+  </div>
+</div>

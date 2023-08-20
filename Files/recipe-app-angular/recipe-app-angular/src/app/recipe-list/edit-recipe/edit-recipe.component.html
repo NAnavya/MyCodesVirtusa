@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-md-12">
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
+      <div class="recipe-data" ngModelGroup="recipeData">
+        <div class="form-group">
+          <label for="recipeName">Recipe Name</label>
+          <input
+            type="text"
+            [ngModel]="name"
+            #recipeName="ngModel"
+            name="recipeName"
+            id="recipeName"
+            class="form-control"
+            required
+          />
+        </div>
+        <p class="text-danger" *ngIf="recipeName.touched && recipeName.invalid">
+          Provide a Recipe Name
+        </p>
+        <div class="form-group">
+          <label for="recipeType">Recipe Type</label>
+          <select
+            name="recipeType"
+            [ngModel]="type"
+            id="recipeType"
+            class="form-control"
+          >
+            <option value="Non-Veg">Non-Veg</option>
+            <option value="Veg">Veg</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="recipeCost">Recipe Cost</label>
+          <input
+            type="number"
+            [ngModel]="cost"
+            #recipeCost="ngModel"
+            name="recipeCost"
+            id="recipeCost"
+            class="form-control"
+            required
+          />
+        </div>
+        <p class="text-danger" *ngIf="recipeCost.touched && recipeCost.invalid">
+          Provide Recipe amount
+        </p>
+      </div>
+      <button class="btn btn-outline-success" type="submit">Edit</button>
+    </form>
+  </div>
+</div>

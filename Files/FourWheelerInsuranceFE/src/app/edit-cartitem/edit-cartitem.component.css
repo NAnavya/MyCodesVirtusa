@@ -1,0 +1,9 @@
+.container{
+    background-color:darkgray;
+    padding:18px;
+    border-radius: 10px;
+    width:45%;
+}
+label{
+    font-weight: bolder;
+}

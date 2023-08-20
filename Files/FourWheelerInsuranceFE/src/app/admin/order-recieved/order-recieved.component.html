@@ -1,0 +1,40 @@
+<app-adminheader></app-adminheader>
+<section class="hero-home bg-cover bg-center vh-100" style="background-image: url('assets/images/Car Insurance.jpg'); background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;" >
+<div class="container index-forward rounded mt-5 bg-transparent" *ngIf="!isEmpty; else noOrdersReceived">
+    <h1 class="text-center" class="text-center text-uppercase text-shadow mb-0 text-light">List Of Orders Recieved</h1>
+    <div class="orders-table text-center">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <th scope="col">OrderId</th>
+                <th scope="col">customerId</th>
+                <th scope="col">policy name</th>
+                <th scope="col">policy price</th>
+                <th scope="col">Number of years of plan</th>
+                <th scope="col">Claim Amount</th>
+                <th scope="col">Policy details</th>
+                <th scope="col">OrderedDateTime</th>
+                <th scope="col">Action</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of ordersRecieved">
+                    <td>{{order.orderid}}</td>
+                    <td>{{order.customerid}}</td>
+                    <td>{{order.policyName}}</td>
+                    <td>{{order.policyPrice}}</td>
+                    <td>{{order.numberOfYearsPlan}}</td>
+                    <td>{{order.claimAmount}}</td>
+                    <td>{{order.policydetails}}</td>
+                    <td>{{order.createdDateTime}}</td>
+                    <td>
+                        <button class="btn btn-danger rounded-pill" (click)="deleteOrder(order.orderid)">delete</button>
+                     </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<ng-template #noOrdersReceived>
+    <h1>No Orders Received Yet</h1>
+</ng-template>

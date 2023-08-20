@@ -1,0 +1,23 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.main input[type=text] {
+    padding: 6px;
+    border: 1px;
+    margin-top: 8px;
+    margin-right: 16px;
+    margin-bottom: 4px;
+    font-size: 15px;
+  }
+
+.about{
+    margin-top: 20px;
+}
+.about h1{
+    background-color: gray;
+    color: whitesmoke;
+    padding: 60px;
+    text-align: center;
+    font-size: 30px;
+}

@@ -1,0 +1,32 @@
+.contact-container{
+    background-color: bisque;
+    padding:18px;
+    border-radius: 10px;
+}
+.contact-details{
+    background-color: aliceblue;
+    border-radius : 10px;
+}
+.contact-details div{
+    display:inline-block;
+    margin:10px;
+    padding:10px;
+    width:33.33%;
+}
+.feedbackform-container{
+    background-color: antiquewhite;
+    padding:18px;
+    border-radius: 10px;
+}
+.feedbackform{
+    background-color: lightsteelblue;
+    padding:18px;
+    border-radius: 10px;
+}
+label{
+    font-weight: bolder;
+}
+h5{
+    font-weight: bolder;
+    font-size:16px;
+}

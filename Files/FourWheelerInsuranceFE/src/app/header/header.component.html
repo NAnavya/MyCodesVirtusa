@@ -1,0 +1,41 @@
+<nav class="navbar-expand-md navbar-light py-4 border-bottom border-gray bg-white" style="background-image: url('assets/images/img3.jpg'); background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;" >
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+        <a class="navbar-brand" href="#">Four Wheeler Insurance</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        </div>
+    <div class="collapse navbar-collapse" id="navcontent">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/home" [routerLinkActiveOptions]="{exact:true}"
+                    routerLinkActive='active'>Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/profile" 
+                    routerLinkActive='active'> Profile </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/product-list" 
+                    routerLinkActive='active'> Policies </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/cart" routerLinkActive='active'>Cart</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/myOrders" routerLinkActive='active'>MyPolicies</a>
+            </li>
+        </ul>
+
+        <div class="user-sec d-flex justify-content-end">
+            <div>
+            </div>
+                <button   class="btn btn-warning rounded-pill"  routerLink="/user" routerLinkActive='active'>{{name}}</button>
+            <button class="logout btn nav-item btn-primary" (click)="logout()">Logout</button>
+        </div>
+    </div>
+</nav>

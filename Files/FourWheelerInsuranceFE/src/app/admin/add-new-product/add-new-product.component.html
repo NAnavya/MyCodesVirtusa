@@ -1,0 +1,43 @@
+<app-adminheader></app-adminheader>
+<section class="hero-home bg-cover bg-center vh-100" style="background-image: url('assets/images/Car Insurance.jpg'); background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;" >
+<h4 class="text-danger text-center" *ngIf="successMessage">
+    {{ successMessage }}
+  </h4>
+  <h4 class="text-danger text-center" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </h4>
+<div class="container index-forward mt-4 bg-transparent" >
+    <h1 class="text-center text-uppercase text-shadow mb-0 text-light">Add New Policy Details</h1>
+   <div class="add-newproduct-form">
+       <form [formGroup]="addNewProductForm" (ngSubmit)="addProduct()" novalidate>
+
+            <div class="form-group">
+                <label for="policyName" class="text-center text-uppercase text-shadow mb-0 text-light  font-weight-bold">Policy Name</label>
+                <input type="text" formControlName="policyName" name="policyName" id="policyName" class="form-control">
+                <small class="text-danger" *ngIf="addNewProductForm.get('policyName').invalid && addNewProductForm.get('policyName').touched">*ProductName is Required</small>
+            </div>
+            <div class="form-group">
+                <label for="policyPrice" class="text-center text-uppercase text-shadow mb-0 text-light  font-weight-bold">policy Price</label>
+                <input type="number" formControlName="policyPrice" name="policyPrice" id="policyPrice" class="form-control">
+                <small class="text-danger" *ngIf="addNewProductForm.get('policyPrice').invalid && addNewProductForm.get('policyPrice').touched">*Brand is Required</small>
+            </div>
+            <div class="form-group">
+                <label for="numberOfYearsPlan" class="text-center text-uppercase text-shadow mb-0 text-light  font-weight-bold">Number of years plan</label>
+                <input type="number" formControlName="numberOfYearsPlan" name="numberOfYearsPlan" id="numberOfYearsPlan" class="form-control">
+                <small class="text-danger" *ngIf="addNewProductForm.get('numberOfYearsPlan').invalid && addNewProductForm.get('numberOfYearsPlan').touched">*ProductCost is Required</small>
+            </div>
+
+            <div class="form-group">
+                <label for="claimAmount" class="text-center text-uppercase text-shadow mb-0 text-light  font-weight-bold">claim Amount</label>
+                <input type="text" formControlName="claimAmount" name="claimAmount" id="claimAmount" class="form-control">
+                <small class="text-danger" *ngIf="addNewProductForm.get('claimAmount').invalid && addNewProductForm.get('claimAmount').touched">*claimAmount is Required</small>
+            </div>
+            <br><br>
+            <button  class="btn btn-outline-warning btn-lg rounded-pill font-weight-bold" [disabled]="addNewProductForm.invalid" type="submit">ADD POLICY</button>
+            <button class="btn btn-outline-warning btn-lg rounded-pill float-right btn btn-outline-primary btn-lg rounded-pill " routerLink="/admin-product">Back</button>
+       </form>
+   </div>
+</div>
+

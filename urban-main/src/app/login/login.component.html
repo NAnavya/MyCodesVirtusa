@@ -1,0 +1,38 @@
+<mat-toolbar class="mat-elevation-z6" ngClass="md-toolbar-toools">
+    <a href="/home"><img src="assets/img/UrbanFashion.png" height="50px" width="78px"></a>
+    <!--We need to add the space between logo and other navigation activities written in css -->
+    <div class="spacer"></div>
+    <!--written path in routing modules hence writen href using a tags-->
+    <div class="main">
+      <input type="text" placeholder="search for products" size="50">
+      <a href="/home" mat-button>Home</a>
+      <a mat-button href="/aboutus">AboutUs</a>
+      <a mat-button href="/products">Products</a>
+      <a mat-button href="/bundles">Bundles</a>
+      <a mat-button href="/favorites"><mat-icon>favorite_border</mat-icon></a>
+      <a mat-button href="/carts"><mat-icon>shopping_cart</mat-icon></a>
+      <a mat-raised-button href="/signup" color="accent">Signup</a>
+    </div>
+  </mat-toolbar>
+  <body>
+  <div class="loginForm">
+    <h1>Login</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="form-field">
+    <input type="email" required="true" formControlName="User">
+    <span style="color: red;" *ngIf="User && User.touched && User.invalid">Invalid EmailId</span>
+    <label>EmailId</label>
+    </div>
+    <div class="form-field">
+    <input type="password" formControlName="Password" required>
+    <span style="color: red;" *ngIf="Password && Password.touched && Password.invalid">Invalid Password</span>
+    <label>Password</label>
+    </div>
+    <!--div class="forgot-field">ForgotPassword?</div-->
+    <input type="button" [disabled]="loginForm.invalid" value="Login" (click)="login()">
+    <div class="signup">Not a member?
+      <a href="/signup">Signup</a>
+    </div>
+  </form>
+  </div>
+  </body>

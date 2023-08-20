@@ -1,0 +1,18 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="list-group">
+        <a
+          [routerLink]="['/recipelist', recipe.recipeID]"
+          class="list-group-item list-group-item-action"
+          *ngFor="let recipe of recipes"
+          >{{ recipe.recipeName }}</a
+        >
+      </div>
+      <button class="btn btn-outline-primary mt-3" (click)="goHome()">Go to Home</button>
+    </div>
+    <div class="col-md-6">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

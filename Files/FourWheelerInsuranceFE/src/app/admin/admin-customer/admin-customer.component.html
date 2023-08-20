@@ -1,0 +1,39 @@
+<app-adminheader></app-adminheader>
+<section class="hero-home bg-cover bg-center vh-100" style="background-image: url('assets/images/Car Insurance.jpg'); background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;">
+    <h4 *ngIf="successMessage">{{successMessage}}</h4>
+    <h4 *ngIf="errorMessage" style="color:red;">{{errorMessage}}</h4>
+    <div class="container index-forward mt-5 bg-transparent" *ngIf="! isEmpty;else noCustomers">
+        <h1 class="text-center" class="text-center text-uppercase text-shadow mb-0 text-light">List of Customers</h1>
+        <br><br>
+        <div class="customers">
+
+            <table class="table table-hover table-bordered flex-column">
+                <thead class="thead-dark">
+                    <th scope="col">CustomerId</th>
+                    <th scope="col">CustomerName</th>
+                    <th scope="col">CustomerEmailId</th>
+                    <th scope="col">PhoneNumber</th>
+                    <th scope="col">Actions</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let customer of customers">
+                        <ng-container *ngIf="customer.name !== 'Admin'">
+                            <td>{{customer.id}}</td>
+                            <td>{{customer.name}}</td>
+                            <td>{{customer.emailId}}</td>
+                            <td>{{customer.phoneNumber}}</td>
+                            <td>
+                                <button class="btn btn-danger  rounded-pill"
+                                    (click)="deleteCustomer(customer.id)">Delete</button>
+                            </td>
+                        </ng-container>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <ng-template #noCustomers>
+        <h1>No Customers Accound Found</h1>
+    </ng-template>

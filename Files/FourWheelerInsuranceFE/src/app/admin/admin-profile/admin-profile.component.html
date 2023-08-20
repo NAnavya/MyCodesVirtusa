@@ -1,0 +1,39 @@
+<app-adminheader></app-adminheader>
+<section class="hero-home bg-cover bg-center vh-100" style="background-image: url('assets/images/Car Insurance.jpg'); background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;" >
+<div class="container index-forward mt-5 bg-transparent" *ngIf="!isEmpty; else noProfiles">
+    <h1 class="text-center" class="text-center text-uppercase text-shadow mb-0 text-light">List of Profiles Receieved</h1>
+    <br><br>
+    <div class="customers">
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <th scope="col">ProfileId</th>
+                <th scope="col">CustomerId</th>
+                <th scope="col">Applicant Name</th> 
+                <th scope="col">Applicant Address</th>
+                <th scope="col">Applicant MobileNumber</th>
+                <th scope="col">ApplicantDetails Given Date</th>
+                <th scope="col">Applicant VehicleNo</th>
+                <th scope="col">Applicant VehicleModel</th>
+               
+                
+            </thead>
+            <tbody>
+                <tr *ngFor="let profile of profiles">
+                     <td>{{profile.id}}</td>
+                    <td>{{profile.customerId}}</td>
+                        <td>{{profile.aplyname}}</td>
+                        <td>{{profile.aplyaddress}}</td>
+                        <td>{{profile.aplynumber}}</td>
+                        <td>{{profile.aplydate}}</td>
+                        <td>{{profile.aplyvehno}}</td>
+                        <td>{{profile.aplyvehmodel}}</td> 
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<ng-template #noProfiles>
+    <h1 style="text-align:center;color:rgb(249, 250, 249);">No Profile From Customers Yet</h1>
+</ng-template>

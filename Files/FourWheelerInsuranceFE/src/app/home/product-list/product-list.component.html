@@ -1,0 +1,14 @@
+<app-header></app-header>
+<section class="hero-home bg-cover bg-center"  style="background-image: url('assets/images/img2.jpg'); 
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;">
+<div class="container-fluid index-forward py-5 mb-5">
+    <div class="row">
+        <div class="col-md-12">
+<form  class="form-inline ml-4 mt-3">
+    <input type="search" class="form-control bg-light border-dark mr-sm-2 rounded-pill" [(ngModel)]="searchitem"  name="search" placeholder="Search By Name">
+</form>
+<app-product-item *ngFor="let productElement of products | filter:searchitem" [product]="productElement"></app-product-item>
+</div>
+</div>

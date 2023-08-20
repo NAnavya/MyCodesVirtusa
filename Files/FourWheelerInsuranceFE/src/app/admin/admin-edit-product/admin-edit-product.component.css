@@ -1,0 +1,16 @@
+.container{
+    background-color: thistle;
+    padding:18px;
+    width:50%;
+}
+.edit-product-form{
+    padding:18px;
+    border-radius: 8px;
+}
+label{
+    font-weight: bolder;
+}
+h4{
+    text-align: center;
+    color:aliceblue;
+}

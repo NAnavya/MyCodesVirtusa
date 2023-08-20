@@ -1,0 +1,44 @@
+<app-header></app-header>
+<section class="hero-home bg-cover bg-center vh-100" style="background-image: url('assets/images/Car Insurance.jpg'); background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;" >
+<div class="container mt-5 text-right index-forward rounded bg-transparent" *ngIf="cartlen > 0;else itemadded">
+    <h1 class="text-center" class="text-center text-uppercase text-shadow mb-0 text-light">Items Added to Cart</h1>
+    <div class="carttable">
+        <table class="table table-bordered table-hover text-center rounded">
+            <thead class="thead-dark">
+                <th scope="col">Id</th>
+                
+                <th scope="col">PolicytName</th>
+                <th scope="col">Policy Price</th>
+                <th scope="col">Number of years of plan</th>
+                <th scope="col">Claim Amount</th>
+                <th colspan="2" scope="col">Action</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cartitem of cartproducts">
+                    <th scope="row">{{cartitem.id}}</th>
+             
+                    <td>{{cartitem.policyName}}</td>
+                    <td>{{cartitem.policyPrice}}</td>
+                    <td>{{cartitem.numberOfYearsPlan}}</td>
+                    <td>{{cartitem.claimAmount | currency: 'INR'}}</td>
+                    <td><button class="btn btn-primary rounded-pill" (click)="editCartItem(cartitem)">View</button></td>
+                    <td><button class="btn btn-outline-danger rounded-pill" (click)="productDeleteFromCart(cartitem.id)">Delete</button></td>
+                </tr>
+                <tr>
+                    <th scope="row" colspan="4" style="text-align:right;">Total</th>
+                    <td>{{totalPrice | currency: 'INR'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button *ngIf="cartproducts.length > 0" class="btn btn-warning rounded-pill" (click)="navigateCheckout()">Proceed to
+        Checkout</button>
+        <button class="btn btn-outline-warning rounded-pill float-right btn-outline-primary rounded-pill " routerLink="/product-list">Back</button>
+</div>
+
+<ng-template #itemadded>
+    <h1 class="text-center" style="color:aliceblue;">{{errorMessage}}</h1>
+</ng-template>
+</section>

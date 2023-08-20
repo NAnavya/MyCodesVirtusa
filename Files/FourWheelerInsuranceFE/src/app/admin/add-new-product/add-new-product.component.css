@@ -1,0 +1,13 @@
+.container{
+    background-color: thistle;
+    padding:18px;
+    border-radius: 8px;
+    width:50%;
+}
+label{
+    font-weight: bolder;
+}
+h4{
+    text-align: center;
+    color:aliceblue;
+}

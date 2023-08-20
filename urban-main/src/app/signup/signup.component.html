@@ -1,0 +1,53 @@
+<mat-toolbar class="mat-elevation-z6" ngClass="md-toolbar-toools">
+    <a href="/home"><img src="assets/img/UrbanFashion.png" height="50px" width="78px"></a>
+    <!--We need to add the space between logo and other navigation activities written in css -->
+    <div class="spacer"></div>
+    <!--written path in routing modules hence writen href using a tags-->
+    <div class="main">
+      <input type="text" placeholder="search for products" size="50">
+      <a href="/home" mat-button>Home</a>
+      <a mat-button href="/aboutus">AboutUs</a>
+      <a mat-button href="/products">Products</a>
+      <a mat-button href="/bundles">Bundles</a>
+      <a mat-button href="/favorites"><mat-icon>favorite_border</mat-icon></a>
+      <a mat-button href="/carts"><mat-icon>shopping_cart</mat-icon></a>
+      <a mat-raised-button href="/signup" color="accent">Signup</a>
+    </div>
+  </mat-toolbar>
+
+  <body>
+    <div class="signupForm">
+      <h1>Signup</h1>
+      <form [formGroup]="signupForm" (ngSubmit)="signup()">
+        <div class="form-field">
+          <input type="text" required="true" formControlName="Name">
+          <span style="color: red;" *ngIf="Name && Name.touched && Name.invalid">Invalid UserName</span>
+          <label>User Name</label>
+        </div>
+        <div class="form-field">
+          <input type="email" required="true" formControlName="User">
+          <span style="color: red;" *ngIf="User && User.touched && User.invalid">Invalid EmailId</span>
+          <label>Email Id</label>
+        </div>
+        <div class="form-field">
+          <input type="text" required="true" formControlName="Number">
+          <span style="color: red;" *ngIf="Number && Number.touched && Number.invalid">Invalid Phone Number</span>
+          <label>Phone Number</label>
+        </div>
+        <div class="form-field">
+          <input type="password" formControlName="Password" required>
+          <span style="color: red;" *ngIf="Password && Password.touched && Password.invalid">Invalid Password</span>
+          <label>New Password</label>
+        </div>
+        <div class="form-field">
+          <input type="password" formControlName="CuPassword" required>
+          <span style="color: red;" *ngIf="CuPassword && CuPassword.touched && CuPassword.invalid">Invalid Password</span>
+          <label>Current Password</label>
+        </div>
+        <input type="button" [disabled]="signupForm.invalid" value="Signup" (click)="signup()">
+        <div class="login">Already a member?
+          <a href="/login">Login</a>
+        </div>
+      </form>
+    </div>
+    </body>

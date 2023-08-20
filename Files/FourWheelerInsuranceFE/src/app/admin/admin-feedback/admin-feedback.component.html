@@ -1,0 +1,35 @@
+<app-adminheader></app-adminheader>
+<section class="hero-home bg-cover bg-center vh-100" style="background-image: url('assets/images/Car Insurance.jpg'); background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;" >
+<div class="container index-forward mt-5 bg-transparent" *ngIf="!isEmpty;else noFeedbacks">
+    <h1 class="text-center" class="text-center text-uppercase text-shadow mb-0 text-light">List of FeedBackReceieved</h1>
+    <br><br>
+    <div class="customers">
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <th scope="col">FeedBackId</th>
+                <th scope="col">CustomerId</th>
+                <th scope="col">CustomerName</th>
+                <th scope="col">CustomerEmailId</th>
+                <th scope="col">PhoneNumber</th>
+                <th scope="col">FeedBackGiven</th>
+                <th scope="col">FeedBackGivenDateTime</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let feedBack of feedBacks">
+                        <td>{{feedBack.id}}</td>
+                        <td>{{feedBack.customerId}}</td>
+                        <td>{{feedBack.name}}</td>
+                        <td>{{feedBack.emailId}}</td>
+                        <td>{{feedBack.phoneNumber}}</td>
+                        <td>{{feedBack.feedBackgiven}}</td>
+                        <td>{{feedBack.createdDateTime}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<ng-template #noFeedbacks>
+    <h1>No Feedbacks From Customers Yet</h1>
+</ng-template>

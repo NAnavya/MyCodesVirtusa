@@ -1,0 +1,39 @@
+<app-adminheader></app-adminheader>
+<section class="hero-home bg-cover bg-center vh-150" style="background-image: url('assets/images/Car Insurance.jpg'); background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;" >
+<h4 *ngIf="successMessage">{{successMessage}}</h4>
+<h4 *ngIf="errorMessage">{{errorMessage}}</h4>
+<div class="container index-forward mt-4 rounded bg-transparent">
+    <h1 class="text-center"class="text-center text-uppercase text-shadow mb-0 text-light">Update the Policy Details</h1>
+    <div class="edit-product-form">
+        <form [formGroup]="productForm" (ngSubmit)="updatePolicy()" novalidate>
+
+            <div class="form-group">
+                <label for="policyName" class="text-center text-uppercase text-shadow mb-0 text-light  font-weight-bold">PolicyName</label>
+                <input type="text" formControlName="policyName" name="policyName" id="policyName" class="form-control">
+                <small class="text-danger" *ngIf="productForm.get('policyName').invalid && productForm.get('policyName').touched">*PolicyName is Required</small>
+            </div>
+
+            <div class="form-group">
+                <label for="policyPrice"class="text-center text-uppercase text-shadow mb-0 text-light  font-weight-bold">policyPrice</label>
+                <input type="text" formControlName="policyPrice" name="brand" id="policyPrice" class="form-control">
+                <small class="text-danger" *ngIf="productForm.get('policyPrice').invalid && productForm.get('policyPrice').touched">*policyPrice is Required</small>
+            </div>
+
+            <div class="form-group">
+                <label for="numberOfYearsPlan" class="text-center text-uppercase text-shadow mb-0 text-light  font-weight-bold">NumberOfYearsPlan</label>
+                <input type="text" formControlName="numberOfYearsPlan" name="numberOfYearsPlan" id="numberOfYearsPlan" class="form-control">
+                <small class="text-danger" *ngIf="productForm.get('numberOfYearsPlan').invalid && productForm.get('numberOfYearsPlan').touched">*NumberOfYearsPlan is Required and Can contain only numbers</small>
+            </div>
+            <div class="form-group">
+                <label for="claimAmount" class="text-center text-uppercase text-shadow mb-0 text-light  font-weight-bold">claim Amount</label>
+                <input type="text" formControlName="claimAmount" name="claimAmount" id="claimAmount" class="form-control">
+                <small class="text-danger" *ngIf="productForm.get('claimAmount').invalid && productForm.get('claimAmount').touched">*claimAmount is Required and Can contain only numbers</small>
+            </div>
+            <br>
+            <button  class="btn btn-primary rounded-pill  bg-success" [disabled]="productForm.invalid" type="submit">Update</button>
+            <button class="btn btn-primary float-right  rounded-pill bg-dark" routerLink="/admin-product">Back</button> 
+        </form>
+    </div>
+</div>

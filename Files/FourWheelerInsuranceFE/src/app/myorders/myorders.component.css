@@ -1,0 +1,12 @@
+.container{
+    background-color: cadetblue;
+    border-radius: 8px;
+    padding:18px;
+}
+.myorders{
+    background-color: silver;
+}
+h1{
+    color:black;
+    text-align: center;
+}

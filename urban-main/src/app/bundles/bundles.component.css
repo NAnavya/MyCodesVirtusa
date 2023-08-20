@@ -1,0 +1,23 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.main input[type=text] {
+    padding: 6px;
+    border: 1px;
+    margin-top: 8px;
+    margin-right: 16px;
+    margin-bottom: 4px;
+    font-size: 15px;
+  }
+
+  .bundles{
+    margin-top: 20px;
+  }
+  .bundles h1{
+    background-color: gray;
+    color: white;
+    padding: 60px;
+    text-align: center;
+    font-size: 30px;
+  }

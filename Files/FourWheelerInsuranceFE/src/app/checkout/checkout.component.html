@@ -1,0 +1,49 @@
+<app-header></app-header>
+<section class="hero-home bg-cover bg-center vh-150" style="background-image: url('assets/images/Car Insurance.jpg'); background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;" >
+<h1 style="text-align:center;color:rgb(255, 255, 255);" class="mt-4 index-forward" class="text-center text-uppercase text-shadow mb-0 text-light">Enter Applicant Details to Apply</h1>
+<div class="container text-right index-forward bg-transparent">
+
+    <form [formGroup]="checkOutForm"  (ngSubmit)="saveAddress()" class="text-left" novalidate>
+
+        <div class="form-group">
+            <label for="aplyname" class="text-center text-uppercase text-shadow mb-0 text-light  font-weight-bold">Applicant Name:</label>
+            <input type="aplyname" formControlName="aplyname" name="aplyname" id="aplyname" class="form-control" placeholder="Name">
+            <small class="text-danger" *ngIf="checkOutForm.get('aplyname').invalid &&  checkOutForm.get('aplyname').touched">*Name is Required</small>
+        </div>
+
+        <div class="form-group">
+            <label for="aplyaddress" class="text-center text-uppercase text-shadow mb-0 text-light  font-weight-bold">Applicant Address:</label>
+            <input type="text" formControlName="aplyaddress" name="aplyaddress" id="aplyaddress" class="form-control" placeholder=" Address">
+            <small class="text-danger" *ngIf="checkOutForm.get('aplyaddress').invalid &&  checkOutForm.get('aplyaddress').touched">*Address is Required</small>
+        </div>
+
+        <div class="form-group">
+            <label for="aplydate" class="text-center text-uppercase text-shadow mb-0 text-light  font-weight-bold">Vehicle DateOfPurchase:</label>
+            <input type="text" formControlName="aplydate" name="aplydate" id="aplydate" class="form-control" placeholder="DateOfPurchase">
+            <small class="text-danger" *ngIf="checkOutForm.get('aplydate').invalid &&  checkOutForm.get('aplydate').touched">*DateOfPurchase is Required</small>
+        </div>
+
+        <div class="form-group">
+            <label for="aplyvehno" class="text-center text-uppercase text-shadow mb-0 text-light  font-weight-bold">Applicant Vehicle number:</label>
+            <input type="text" formControlName="aplyvehno" name="aplyvehno" id="aplyvehno" class="form-control" placeholder="Vehicle number">
+            <small class="text-danger" *ngIf="checkOutForm.get('aplyvehno').invalid &&  checkOutForm.get('aplyvehno').touched">*Vehivle Number is Required</small>
+        </div>
+
+        <div class="form-group">
+            <label for="aplyvehmodel" class="text-center text-uppercase text-shadow mb-0 text-light  font-weight-bold">Applicant Vehicle Model:</label>
+            <input type="text" formControlName="aplyvehmodel" name="aplyvehmodel" id="aplyvehmodel" class="form-control" placeholder=" Vehicle Model">
+            <small class="text-danger" *ngIf="checkOutForm.get('aplyvehmodel').invalid &&  checkOutForm.get('aplyvehmodel').touched">*VehicleModel is Required</small>
+        </div>
+
+        <div class="form-group">
+            <label for="aplynumber" class="text-center text-uppercase text-shadow mb-0 text-light  font-weight-bold">Applicant MobileNumber</label>
+            <input type="text" formControlName="aplynumber" name="aplynumber" id="aplynumber" class="form-control" placeholder="MobileNumber">
+            <small class="text-danger" *ngIf="checkOutForm.get('aplynumber').invalid &&  checkOutForm.get('aplynumber').touched">*MobileNumber is Required </small>
+            
+        </div>
+        <button class="btn btn-danger rounded-pill" [disabled]="checkOutForm.invalid"  type="submit">Submit</button>
+        <button class="btn btn-outline-warning rounded-pill float-right btn-outline-primary rounded-pill " routerLink="/cart">Back</button>
+    </form>
+</div>
