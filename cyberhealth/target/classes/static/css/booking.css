@@ -1,0 +1,41 @@
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border-style: groove;
+  display: inline-block;
+  padding: 2rem;
+  max-width: 300px;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-top: -1.5rem;
+  margin-right: -1.5rem;
+}
+
+.invisible {
+	display: none !important;
+}
+
+.close-btn {
+	border-radius: 0.5rem;
+	background-color: red;
+	color: white;
+	border-width: 0;
+	font-size: 1rem;
+	padding: 0.75rem;
+}
+.submit-btn {
+	border-radius: 0.5rem;
+	background-color: green;
+	color: white;
+	border-width: 0;
+	font-size: 1rem;
+	padding: 0.75rem;
+}
